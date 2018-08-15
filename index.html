@@ -9,6 +9,10 @@
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/product-card.css">
+    <link rel="stylesheet" href="css/social_log-in.css">
+
+
     <!-- The font Awesome code below is several revisions back.
     https://stackoverflow.com/questions/14698589/fontawesome-not-available-as-a-font-family
      I discovered that it would work from an article on stack overflow.  all code should at some point be updated to relfect the last calling syntax for font awesome -->
@@ -20,9 +24,6 @@
 
   </head>
   <body>
-
-
-
 <!-- *Begin Exprimental Area -->
     <!-- *Begin Social Icons -->
     <div class="rounded-social-buttons">
@@ -40,17 +41,110 @@
 <i class="fas fa-stroopwafel"></i> <!-- this icon's 1) style prefix == fas and 2) icon name == stroopwafel -->
 <i class="fas fa-stroopwafel"></i> <!-- using an <i> element to reference the icon -->
 <span class="fas fa-stroopwafel"></span> <!-- using a <span> element to reference the icon -->
-
-
-
     <!-- *End Social Icons -->
 
+<!-- *Begin Product Card Equalizer  - In this sectoin we wil use a product card from the building blocks insde of the equalizer code from the kitchen sink.
+https://foundation.zurb.com/sites/docs/kitchen-sink.html#accordion -->
+
+    <div class="grid-x grid-margin-x" data-equalizer data-equalize-on="medium" id="test-eq">
+      <div class="cell medium-4">
+        <div class="callout" data-equalizer-watch>
+          <!-- *Begin Product Card -->
+
+          <div class="card card-product">
+            <div class="card-product-img-wrapper">
+              <a class="button expanded">Add to Cart</a>
+              <a href="https://www.nordstromrack.com/shop/product/2396605/fenty-fenty-puma-by-rihanna-pointed-patent-leather-platform-sneaker-unisex?color=ROSIN%20LEMON%20VANILLA%20YELLOW"><img src="data:image/jpeg;base64,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"></a>
+            </div>
+            <div class="card-section">
+              <a href="https://www.nordstromrack.com/shop/product/2396605/fenty-fenty-puma-by-rihanna-pointed-patent-leather-platform-sneaker-unisex?color=ROSIN%20LEMON%20VANILLA%20YELLOW"><h3 class="card-product-name">FENTY PUMA by Rihanna </h3></a>
+              <h5 class="card-product-price">$79.99</h5>
+              <p class="card-product-description">FENTY Pointed Patent Leather Platform Sneaker (Unisex)</p>
+            </div>
+          </div>
+          <!-- *End Product Card -->
+
+        </div>
+      </div>
+      <div class="cell medium-4">
+        <div class="callout" data-equalizer-watch>
+          <!-- *Begin Product Card -->
+
+          <div class="card card-product">
+            <div class="card-product-img-wrapper">
+              <a class="button expanded">Add to Cart</a>
+              <a href="#"><img src="data:image/jpeg;base64,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"></a>
+            </div>
+            <div class="card-section">
+              <a href="#"><h3 class="card-product-name">FENTY PUMA by Rihanna </h3></a>
+              <h5 class="card-product-price">$79.99</h5>
+              <p class="card-product-description">FENTY Pointed Patent Leather Platform Sneaker (Unisex)</p>
+            </div>
+          </div>
+          <!-- *End Product Card -->
+
+        </div>
+      </div>
+      <div class="cell medium-4">
+        <div class="callout" data-equalizer-watch>
+          <!-- *Begin Product Card -->
+
+          <div class="card card-product">
+            <div class="card-product-img-wrapper">
+              <a class="button expanded">Add to Cart</a>
+              <a href="#"><img src="data:image/jpeg;base64,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"></a>
+            </div>
+            <div class="card-section">
+              <a href="#"><h3 class="card-product-name">FENTY PUMA by Rihanna </h3></a>
+              <h5 class="card-product-price">$79.99</h5>
+              <p class="card-product-description">FENTY Pointed Patent Leather Platform Sneaker (Unisex)</p>
+            </div>
+          </div>
+          <!-- *End Product Card -->
+
+        </div>
+      </div>
+    </div>
+
+<!-- *End Product Card Equalizer -->
 
 
+<!-- *End Modal with Log In -->
+
+<div class="reveal" id="exampleModal1" data-reveal>
+  <!-- *Begin Social Log In -->
+  <div class="login-box">
+    <div class="row collapse expanded">
+      <div class="small-12 medium-6 column small-order-2 medium-order-1">
+        <div class="login-box-form-section">
+          <h1 class="login-box-title">Sign up</h1>
+          <input class="login-box-input" type="text" name="username" placeholder="Username" />
+          <input class="login-box-input" type="email" name="email" placeholder="E-mail" />
+          <input class="login-box-input" type="password" name="password" placeholder="Password" />
+          <input class="login-box-input" type="password" name="password2" placeholder="Retype password" />
+          <input class="login-box-submit-button" type="submit" name="signup_submit" value="Sign me up" />
+        </div>
+        <div class="or">OR</div>
+      </div>
+      <div class="small-12 medium-6 column small-order-1 medium-order-2 login-box-social-section">
+        <div class="login-box-social-section-inner">
+          <span class="login-box-social-headline">Sign in with<br />your social network</span>
+          <a class="login-box-social-button-facebook">Log in with facebook</a>
+          <a class="login-box-social-button-twitter">Log in with Twitter</a>
+          <a class="login-box-social-button-google">Log in with Google+</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- *End Social Log In -->
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
 
-
-
+<p><button class="button" data-open="exampleModal1">Click Here to Log In</button></p>
+<!-- *End Modal with Log In -->
 
 <!-- *End Exprimental Area -->
 
@@ -59,3 +153,4 @@
     <script src="js/vendor/foundation.js"></script>
     <script src="js/app.js"></script>
   </body>
+</html>
